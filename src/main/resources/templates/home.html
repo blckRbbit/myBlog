@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+    <header th:insert="sections/header :: header"></header>
+    <main>
+
+    <section class="banner py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Блог чёрного кролика</h1>
+                <p class="lead text-muted">Здесь собраны различные статьи, посвящённые программированию. Они помогут и новичкам и гуру...</p>
+                <p>
+                    <a href="#main_content" class="btn btn-primary my-2">Последние статьи</a>
+                    <a href="#" class="btn btn-secondary my-2">Задать вопрос</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+
+        <span id="main_content"></span> <!-- якорь -->
+
+        <div class="container">
+            <div class="row">
+                <div th:each="element : ${posts}" class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <h4 th:text="${element.title}"/>
+                    <p th:text="${element.announce}"/>
+                    <a th:href="'/articles/' + ${element.id}" class="btn btn-sm btn-outline-secondary">Читать</a>
+                </div>
+            </div>
+        </div>
+
+</main>
+    <footer th:insert="sections/footer :: footer"></footer>
+</body>
+</html>

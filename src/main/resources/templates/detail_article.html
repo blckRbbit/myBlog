@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Статьи</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="sections/header :: header"></header>
+
+<main>
+    <div class="container mt-5">
+        <div th:each="element : ${post}" class="alert alert-info mt-2">
+            <h1 th:text="${element.title}"/>
+            <p th:text="${element.content}"/>
+            <div class="d-flex"><b>просмотры:&nbsp;</b><p th:text="${element.views}"/></div>
+            <div class="d-flex">
+                <a th:href="'/articles/' + ${element.id} + '/edit'" class="btn btn-warning mr-3">Редактировать</a>
+                <form th:action="'/articles/' + ${element.id} + '/remove'" method="post">
+                    <button class="btn btn-danger" type="submit">Удалить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer th:insert="sections/footer :: footer"></footer>
+</body>
+</html>
