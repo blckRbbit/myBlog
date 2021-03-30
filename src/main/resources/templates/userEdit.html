@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Изменение пользователя</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+
+    <div class="container">
+        <h3>Изменение пользователя</h3>
+        <br>
+        <form th:action="@{/user}" method="post">
+            <input type="text" name="username" th:value="${user.username}">
+            <div>
+                <label th:each="role : ${roles}">
+                    <input type="checkbox" th:name="${role}" th:value="${role}" th:text="${role}">
+                    <br>
+                </label>
+            </div>
+            <input type="hidden" th:value="${user.id}" name="userId">
+            <br>
+            <button type="submit" class="btn btn-success">Сохранить</button>
+        </form>
+    </div>
+
+</body>
+</html>

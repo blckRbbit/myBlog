@@ -1,11 +1,35 @@
 <div th:fragment="header">
     <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom container">
-        <h5 class="my-0 mr-md-auto font-weight-normal">БЛОГ</h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="55.000000pt" height="55.000000pt" viewBox="0 0 240.000000 240.000000"
+                preserveAspectRatio="xMidYMid meet">
+                <metadata>
+                Created by potrace 1.16, written by Peter Selinger 2001-2019
+                </metadata>
+                <g transform="translate(0.000000,240.000000) scale(0.100000,-0.100000)"
+                fill="#000000" stroke="none">
+                <path d="M937 2177 c-85 -51 -137 -150 -173 -324 -12 -63 -28 -121 -35 -129
+                -6 -8 -24 -14 -38 -14 -15 0 -52 -7 -82 -16 -47 -13 -67 -28 -151 -113 -117
+                -120 -135 -149 -119 -202 14 -46 74 -100 131 -119 23 -8 45 -21 49 -29 5 -9
+                11 -77 15 -151 11 -229 32 -291 141 -420 54 -63 78 -123 70 -169 -12 -65 -42
+                -116 -85 -140 -53 -30 -72 -60 -68 -108 l3 -38 123 -3 124 -3 38 38 c30 31 44
+                59 74 152 48 146 49 148 96 161 51 14 77 6 153 -43 34 -22 80 -48 102 -57 l40
+                -17 -72 -23 c-83 -25 -132 -55 -150 -90 -17 -34 -16 -95 2 -110 10 -9 83 -11
+                282 -8 309 4 318 7 464 104 46 30 111 68 146 85 78 37 108 75 132 170 19 73
+                19 74 -1 77 -10 2 -36 -5 -56 -16 l-37 -19 4 78 c4 99 -18 202 -65 300 -54
+                113 -167 219 -304 287 -163 79 -235 94 -490 101 l-215 6 -2 125 c-2 147 5 169
+                97 296 32 44 66 98 74 120 23 58 46 163 46 211 0 76 -53 96 -115 42 -30 -27
+                -35 -28 -35 -12 0 47 -53 56 -113 20z"/>
+                </g>
+            </svg>
+        </h5>
         <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
             <a class="me-3 mr-5 py-2 text-dark text-decoration-none" href="/">Главная</a>
             <a class="me-3 mr-5 py-2 text-dark text-decoration-none" href="/articles">Статьи</a>
             <a class="me-3 mr-5 py-2 text-dark text-decoration-none" href="/articles/add">Новая статья</a>
             <a class="mr-5 py-2 text-dark text-decoration-none" href="/about">О нас</a>
+            <a class="mr-5 py-2 text-dark text-decoration-none" href="/user">Пользователи</a>
             <form th:action="@{/logout}" method="post">
                 <input class="py-2 text-dark btn btn-warning" type="submit" value="Выйти"/>
             </form>
